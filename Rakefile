@@ -10,3 +10,8 @@ Rake::TestTask.new do |t|
 end
 
 Gem::Tasks.new
+
+task :clean do
+  FileUtils.rm_rf "pkg"
+  FileUtils.rm_f "test.log"
+end
