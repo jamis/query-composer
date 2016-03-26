@@ -45,7 +45,8 @@ composer.use(:patrons) { Patron.all }
 
 require 'query/base'
 
-# Arel objects and Query::Base respond to #to_sql
+# Arel objects and Query::Base (a thin wrapper around
+# Arel::SelectManager) respond to #to_sql
 composer.use(:books_by_patron) do |patrons|
   books = Book.arel_table
   lendings = Lending.arel_table

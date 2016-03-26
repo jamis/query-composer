@@ -192,7 +192,9 @@ puts "---- SQL ----"
 puts sql
 
 puts
-puts "---- Results ----"
+puts "%-6s | %3s | %5s" % %w(Patron Now Prior)
+puts "%-6s-+-%3s-+-%5s-" % ["-"*6, "-"*3, "-"*5]
+
 Patron.find_by_sql(sql).each do |patron|
-  puts "#{patron.name} :: #{patron.current_total} :: #{patron.prior_total}"
+  puts "%-6s | %3d | %5d" % [ patron.name, patron.current_total, patron.prior_total||0]
 end
