@@ -122,7 +122,7 @@ module Query
 
       # By default, the composer generates queries that use shortened
       # names as aliases for the full names of the components. If you'd
-      # rather use the full names instead of aliases, 
+      # rather use the full names instead of aliases,
       def prefer_aliases=(preference)
         @@prefer_aliases = preference
       end
@@ -222,7 +222,7 @@ module Query
     # Invokes the named dependency, using the given aliases mapping.
     def _invoke(name, aliases)
       block = @parts[name]
-      params = block.parameters.map { |(_, name)| aliases[name] }
+      params = block.parameters.map { |(_, n)| aliases[n] }
       result = block.call(*params)
 
       if result.respond_to?(:arel)

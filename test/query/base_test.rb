@@ -31,14 +31,14 @@ module Query
 
     def test_all_should_project_all_table_attributes
       q = Query::Base.new(:people).all
-      assert_match /"people"\.\*/, q.to_sql
+      assert_match(/"people"\.\*/, q.to_sql)
     end
 
     def test_reproject_should_change_attributes_in_projection
       q = Query::Base.new(:people).all
       q.reproject(q.primary_table[:id], q.primary_table[:first_name])
-      refute_match /"people"\.\*/, q.to_sql
-      assert_match /"people"\."id", "people"\."first_name"/, q.to_sql
+      refute_match(/"people"\.\*/, q.to_sql)
+      assert_match(/"people"\."id", "people"\."first_name"/, q.to_sql)
     end
 
     def test_as_should_return_Arel_node_instance
