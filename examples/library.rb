@@ -1,6 +1,6 @@
 # A simple example that demonstrates the use of Query::Composer in a
 # library reporting system. Given a data model that includes sets of
-# libraries, topics, books, and patrons, and permis books to be lended
+# libraries, topics, books, and patrons, and permits books to be lended
 # from a library to a patron on a given date, this script builds and
 # executes a query that shows how many books from a given set of topics
 # and libraries each patron borrowed during a given period of time, and
