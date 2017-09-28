@@ -24,5 +24,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "activerecord", ">= 4.0"
   gem.add_development_dependency "rubygems-tasks", "~> 0"
 
-  gem.add_dependency "arel", "~> 6.0"
+  gem.add_dependency "arel", "~> 8.0"
 end
